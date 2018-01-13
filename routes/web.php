@@ -11,7 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-	dd('jj');
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index');
