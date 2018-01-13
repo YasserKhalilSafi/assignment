@@ -11,6 +11,8 @@ class IndexController extends GuzzlController
         $aData = $this->getAPIResponse('GET');
         if(!$oData instanceof \stdClasss){
         	return view('index.view',['offers'=>$aData->offers]);
+        }else{
+        	dd('render 404 page');
         }
     }
 }
