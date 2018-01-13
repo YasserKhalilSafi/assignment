@@ -8,10 +8,9 @@ class IndexController extends GuzzlController
 {
     public function index()
     {
-        $oData = $this->getAPIResponse('GET');
-
+        $aData = $this->getAPIResponse('GET');
         if(!$oData instanceof stdClasss){
-        	dd('render review');
+        	return view('index.view',['offers'=>$aData->offers]);
         }
     }
 }
