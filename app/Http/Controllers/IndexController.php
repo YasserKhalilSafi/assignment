@@ -29,6 +29,7 @@ class IndexController extends GuzzlController
             'minGuestRating'	=> $request->input('minGuestRating'),
             'maxGuestRating'	=> $request->input('maxGuestRating'),
         );
+
         $this->aSearchParams = http_build_query($aRequestParams);
 
         $aData = $this->getAPIResponse('GET',$this->aSearchParams);
