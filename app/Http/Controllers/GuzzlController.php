@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-
 
 class GuzzlController extends Controller
 {
@@ -24,13 +22,12 @@ class GuzzlController extends Controller
 			]);
 
 	        $this->response = $client->request($sRequestType,$this->sDomain . $this->sService . $this->sDefultParameters);
-	        $jsonResponse = json_decode($this->response->getBody());
-
-	        dd($this->response );
+	        //$jsonResponse = json_decode($this->response->getBody());
+	        dd(array('done',$this->response));
     	}catch(Exception $e){
     		$jsonResponse =  new stdClass();
     	}
-
+dd('error');
     	return $jsonResponse;
     }
 
