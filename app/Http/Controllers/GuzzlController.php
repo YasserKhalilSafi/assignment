@@ -12,7 +12,7 @@ class GuzzlController extends Controller
     private $sService = 'offers/v2/getOffers';
     private $sDefultParameters = '?scenario=deal-finder&page=foo&uid=foo&productType=Hotel';
     private $oResponse = null;
-    private $sParams = '';
+    private $sParams = 's';
     private $aReturnResponse = array();
 
     public function getAPIResponse($sRequestType,$sSearchParams = ''){
