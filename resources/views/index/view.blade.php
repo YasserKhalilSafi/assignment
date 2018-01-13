@@ -2,13 +2,13 @@
     <div class="explore-rooms margint30 clearfix"><!-- Explore Rooms Section -->
         <div class="container">
             <div class="row">
-                @if( $hotels == null )
+                @if( $offers == null )
                     <div class="title-style-2 marginb40 pos-center">
                         <h2> ... SORRY NO RESULTS FOUND! ...</h2>
                         <hr>
                     </div>
                 @else
-                    @foreach($hotels->Hotel as $hotel)
+                    @foreach($offers->Hotel as $hotel)
                         <div class="col-lg-4 col-sm-6">
                             <div class="home-room-box" style="margin-bottom: 85px;">
                                 <div class="room-image">
