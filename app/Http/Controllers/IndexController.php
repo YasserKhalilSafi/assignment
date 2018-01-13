@@ -25,7 +25,7 @@ class IndexController extends GuzzlController
             'regionIds'  		=> $request->input('regionIds'),
             'minTripStartDate'	=> $request->input('minTripStartDate'),
             'maxTripStartDate'	=> $request->input('maxTripStartDate'),
-            'lengthOfStay'	=> $request->input('lengthOfStay'),
+            'lengthOfStay'		=> $request->input('lengthOfStay'),
             'minGuestRating'	=> $request->input('minGuestRating'),
             'maxGuestRating'	=> $request->input('maxGuestRating'),
         );

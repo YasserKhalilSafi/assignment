@@ -36,6 +36,7 @@ class GuzzlController extends Controller
     	}catch(\Exception $e){
     		$aReturnResponse =  array();
     	}
+
     	return $aReturnResponse;
     }
 }
