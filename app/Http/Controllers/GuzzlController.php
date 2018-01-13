@@ -22,8 +22,8 @@ class GuzzlController extends Controller
 			]);
 	        $this->oResponse = $client->request($sRequestType,'https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel');
 	        $jsonResponse = \GuzzleHttp\json_decode($this->oResponse->getBody());
-    	}catch(Exception $e){
-    		$jsonResponse =  new stdClass();
+    	}catch(\Exception $e){
+    		$jsonResponse =  new \stdClass();
     	}
     	return $jsonResponse;
     }
