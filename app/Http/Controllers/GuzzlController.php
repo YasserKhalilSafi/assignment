@@ -13,6 +13,7 @@ class GuzzlController extends Controller
     private $sDefultParameters = '?scenario=deal-finder&page=foo&uid=foo&productType=Hotel';
     private $oResponse = null;
     private $sParams = '';
+    private $aReturnResponse = array();
 
     public function getAPIResponse($sRequestType,$sSearchParams = ''){
 
@@ -30,12 +31,11 @@ class GuzzlController extends Controller
 			]);
 
 	        $this->oResponse = $client->request($sRequestType,$this->sParams);
+	        $aReturnResponse = \GuzzleHttp\json_decode($this->oResponse->getBody());
 
-	        $jsonResponse = \GuzzleHttp\json_decode($this->oResponse->getBody());
-	        dd($jsonResponse);
     	}catch(\Exception $e){
-    		$jsonResponse =  array();
+    		$aReturnResponse =  array();
     	}
-    	return $jsonResponse;
+    	return $aReturnResponse;
     }
 }

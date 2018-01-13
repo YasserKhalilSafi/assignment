@@ -33,6 +33,11 @@ class IndexController extends GuzzlController
         $this->aSearchParams = http_build_query($aRequestParams);
 
         $aData = $this->getAPIResponse('GET',$this->aSearchParams);
+        if(!empty($aData) && isset($aData->offers)){
+        	return view('index.view',['offers'=>$aData->offers]);
+        }else{
+        	dd('render 404 page');
+        }
     }
 
 }
