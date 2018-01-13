@@ -9,7 +9,7 @@ class IndexController extends GuzzlController
     public function index()
     {
         $aData = $this->getAPIResponse('GET');
-        if(!$oData instanceof \stdClasss){
+        if(!empty($aData)){
         	return view('index.view',['offers'=>$aData->offers]);
         }else{
         	dd('render 404 page');
