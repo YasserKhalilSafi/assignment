@@ -20,7 +20,7 @@ class GuzzlController extends Controller
 			$client = new Client([
 				'header' =>['content_type'=>'application/json','Accept'=>'application/json'],
 			]);
-	        $this->oResponse = $client->request($sRequestType,$sRequestType,$this->sDomain.$this->sService.$this->sDefultParameters);
+	        $this->oResponse = $client->request($sRequestType,$this->sDomain.$this->sService.$this->sDefultParameters);
 	        $jsonResponse = \GuzzleHttp\json_decode($this->oResponse->getBody());
     	}catch(\Exception $e){
     		$jsonResponse =  new \stdClass();
