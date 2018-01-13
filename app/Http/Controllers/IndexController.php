@@ -14,7 +14,7 @@ class IndexController extends GuzzlController
         if(!empty($aData) && isset($aData->offers)){
         	return view('index.view',['offers'=>$aData->offers]);
         }else{
-        	dd('render 404 page');
+        	return view('index.view',['offers'=>null]);
         }
     }
 
@@ -36,7 +36,7 @@ class IndexController extends GuzzlController
         if(!empty($aData) && isset($aData->offers)){
         	return view('index.view',['offers'=>$aData->offers]);
         }else{
-        	dd('render 404 page');
+        	return view('index.view',['offers'=>null]);
         }
     }
 
