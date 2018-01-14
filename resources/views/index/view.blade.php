@@ -59,19 +59,69 @@
               margin-left: -100px;
             }
             .offerTitle {
-              text-align: center;
-              top: 10%;
-              left: 50%;
-              margin-top: -50px;
-              margin-left: -100px;
+              padding-bottom: 20px;
+              list-style-type: none;
+              width: 500px;
+              margin: auto;
+            }
+            .searchDev {
+                width: 35%;
+                margin: 0 auto;
+                background-color: #fff;
+                padding-right: 5px;
+            }
+            label {
+                display: block; /* add this */
+                padding-top: 10px;
+            }
+            input[type=text], input[type=number],input[type=date] {
+                height: 1.5rem;
+                width: 100%;
+            }
+            input[type=submit] {
+              width: 100%;
+              border-top:   2px solid;
+              border-left:    2px solid ;
+              border-right:   2px solid ;
+              border-bottom:    2px solid ;
+              padding:    10px 20px ;
+              font-size:    14px ;
+              background-color: #008BFF;
+              font-weight:    bold;
+              margin-top:10px ;
+               margin-bottom:30px ;
             }
         </style>
     </head>
     <body>
         <div>
+            <div class="searchDev">
+                <h2>Find Offers:</h2>
+                {!! Form::open(['url' => 'find']) !!}
+                    <label>Destination Name</label>
+                    {{ Form::text('destinationName')}}
+                    <label>Region Ids</label>
+                    {{ Form::text('regionIds')}}
+                    <label>Minimum Trip Start Date</label>
+                    {{Form::date('minTripStart', null,['class' => 'form-control'])}}
+                    <label>Maximum Trip Start Date</label>
+                    {{Form::date('maxTripStart', null,['class' => 'form-control'])}}
+                    <label>Length Of Stay</label>
+                    {{ Form::number('lengthOfStay','',['min'=>0])}}
+                    <label>Minimum Guest Rating</label>
+                    {{ Form::number('minGuestRating','',['min'=>0,'max'=>5])}}
+                    <label>Maximum Guest Rating</label>
+                    {{ Form::number('maxGuestRating','',['min'=>0,'max'=>5])}}
+                    {{ Form::submit('Search!') }}
+                {!! Form::close() !!}
+            </div>
             @if ($offers)
                 <ul>
-                    <div class="offerTitle"><h2>Avilable Offers</h2></div>
+                    <div class="offerTitle">
+                      <h2>
+                          @if (isset($search)) Search Offers @else Avilable Offers @endif
+                      </h2>
+                    </div>
                     @foreach($offers->Hotel as $hotel)
                         <li>
                             <img alt="Offer" src="{{$hotel->hotelInfo->hotelImageUrl}}">
