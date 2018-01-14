@@ -51,13 +51,6 @@
               background: #eee;
               cursor: pointer;
             }
-            .screenDiv {
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              margin-top: -50px;
-              margin-left: -100px;
-            }
             .offerTitle {
               padding-bottom: 20px;
               list-style-type: none;
@@ -136,7 +129,7 @@
                     @endforeach
                 </ul>
             @else
-                <div class="screenDiv">
+                <div class="offerTitle">
                     <h2>NO RESULTS FOUND</h2>
                 </div>
             @endif
